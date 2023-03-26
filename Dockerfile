@@ -2,7 +2,7 @@ FROM alpine:3.12
 
 ENV LANG C.UTF-8
 ENV VPN_ENABLE 1
-ENV SCOKS5_ENABLE 0
+ENV SCOKS5_ENABLE 1
 ENV SCOKS5_FORKS 2
 ENV SCOKS5_START_DELAY 5
 
@@ -27,6 +27,8 @@ COPY xl2tpd.conf /etc/xl2tpd/xl2tpd.conf
 COPY options.l2tpd.client /etc/ppp/options.l2tpd.client
 # Socks5 Files
 COPY sockd.conf /etc/sockd.conf
+# DNS Files
+COPY resolv.conf /etc/resolv.conf
 # Scripts
 COPY startup.sh /
 COPY reconnector.sh /
