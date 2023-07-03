@@ -1,4 +1,4 @@
-FROM alpine:3.12
+FROM alpine:3.18.2
 
 ENV LANG C.UTF-8
 ENV VPN_ENABLE 1
@@ -28,7 +28,7 @@ COPY options.l2tpd.client /etc/ppp/options.l2tpd.client
 # Socks5 Files
 COPY sockd.conf /etc/sockd.conf
 # DNS Files
-COPY resolv.conf /etc/resolv.conf
+COPY resolv.conf /etc/
 # Scripts
 COPY startup.sh /
 COPY reconnector.sh /
